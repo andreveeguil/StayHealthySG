@@ -3,6 +3,9 @@ package com.example.ajinkya.stayhealthysg;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
 
@@ -41,6 +44,24 @@ public class Diseases extends AppCompatActivity implements OnMapReadyCallback{
                 .findFragmentById(R.id.safestRoute);
         mapFragment.getMapAsync(this);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+        }
     }
 
 

@@ -45,7 +45,7 @@ public class Malaria extends AppCompatActivity implements OnMapReadyCallback {
         host.addTab(spec);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(malariaMapActivity);
+                .findFragmentById(R.id.malariaMapActivity);
         mapFragment.getMapAsync(this);
 
 
